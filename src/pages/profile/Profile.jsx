@@ -14,7 +14,7 @@ export default function Profile() {
 
     useEffect(()=>{
         async function fetchUser(){
-          const res = await axios.get(`/users/?username=${username}`);
+          const res = await axios.get(`https://adibook-api.onrender.com/users/?username=${username}`);
           setUser(res.data);
         }
         fetchUser();
