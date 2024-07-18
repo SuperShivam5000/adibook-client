@@ -28,10 +28,10 @@ export default function Rightbar({user}) {
   async function handleClick(){
     try{
       if(followed){
-        await axios.put("https://adibook-api.onrender.com/users/"+user._id+"/unfollow",{userId:currentUser._id})
+        await axios.put("https://adibook-api.onrender.com/api/users/"+user._id+"/unfollow",{userId:currentUser._id})
         dispatch({type:"UNFOLLOW", payload:user._id})
       } else {
-        await axios.put("https://adibook-api.onrender.com/users/"+user._id+"/follow",{userId:currentUser._id})
+        await axios.put("https://adibook-api.onrender.com/api/users/"+user._id+"/follow",{userId:currentUser._id})
         dispatch({type:"FOLLOW", payload:user._id})
       }
     } catch(err){

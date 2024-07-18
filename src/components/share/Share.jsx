@@ -24,13 +24,13 @@ export default function Share() {
             data.append("file",file);
             newPost.img = fileName;
             try{
-                await axios.post("https://adibook-api.onrender.com/upload", data);
+                await axios.post("https://adibook-api.onrender.com/api/upload", data);
             } catch (err){
                 console.log(err);
             }
         }
         try{
-            await axios.post("https://adibook-api.onrender.com/posts",newPost);
+            await axios.post("https://adibook-api.onrender.com/api/posts",newPost);
             window.location.reload();
         } catch(err){
             console.log(err);

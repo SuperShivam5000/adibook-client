@@ -12,8 +12,8 @@ export default function Feed({username}) {
   useEffect(()=>{
     async function fetchPosts(){
       const res = username 
-      ? await axios.get("https://adibook-api.onrender.com/posts/profile/"+username)
-      : await axios.get("https://adibook-api.onrender.com/posts/timeline/" + user._id);
+      ? await axios.get("https://adibook-api.onrender.com/api/posts/profile/"+username)
+      : await axios.get("https://adibook-api.onrender.com/api/posts/timeline/" + user._id);
       setPosts(res.data.sort((p1,p2)=>{
         return new Date(p2.createdAt) - new Date(p1.createdAt);
       }));
