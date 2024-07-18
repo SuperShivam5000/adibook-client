@@ -19,7 +19,7 @@ export default function Post({post}) {
 
     useEffect(()=>{
         async function fetchUser(){
-          const res = await axios.get(`https://adibook-api.onrender.com/api/users/?userId=${post.userId}`);
+          const res = await axios.get(`/users/?userId=${post.userId}`);
           setUser(res.data);
         }
         fetchUser();
@@ -27,7 +27,7 @@ export default function Post({post}) {
 
     function likeHandler(){
         try{
-            axios.put("https://adibook-api.onrender.com/api/posts/"+post._id+"/like",{userId:currentUser._id});
+            axios.put("/posts/"+post._id+"/like",{userId:currentUser._id});
         } catch(err) {
 
         }

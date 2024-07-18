@@ -21,7 +21,7 @@ export default function Register() {
                 password: password.current.value
             }
             try {
-                await axios.post("https://adibook-api.onrender.com/api/auth/register", user);
+                await axios.post("/auth/register", user);
                 navigate("/login");
             }
             catch(err){
