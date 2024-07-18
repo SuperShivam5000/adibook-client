@@ -16,7 +16,7 @@ export default function Rightbar({user}) {
   useEffect(()=>{
     async function getFriends(){
       try{
-        const friendList = await axios.get("https://adibook-api.onrender.com/users/friends/"+user._id);
+        const friendList = await axios.get("https://adibook-api.onrender.com/api/users/friends/"+user._id);
         setFriends(friendList.data);
       } catch(err){
         console.log(err);
